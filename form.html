@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Form</title>
+    <link rel="icon" type="image/png" href="VS.png">
+    <link rel="stylesheet" href="form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar-title">VISINEMA ID</nav>
+
+    <div class="form-container">
+        <h1 class="regis-form-title">Movie Ticket Purchase</h1>
+        <p class="form-subtitle">Fill in your details below to purchase your tickets!</p>
+
+        <form id="ticketForm" class="form-content">
+            <label>Full Name</label>
+            <input type="text" class="input-field" placeholder="Enter your full name" required>
+
+            <label>Email Address</label>
+            <input type="email" class="input-field" placeholder="Enter your email" required>
+
+            <label>Phone Number</label>
+            <input type="tel" class="input-field" placeholder="Enter your phone number" required>
+
+            <label>Choose Movie</label>
+            <select class="input-field" required>
+                <option selected disabled>Choose your movie</option>
+                <option>Spiderman: No Way Home</option>
+                <option>Men In Black</option>
+                <option>Cars</option>
+                <option>Conjuring: Last Rites</option>
+                <option>Zootopia</option>
+                <option>Fast & Furious</option>
+                <option>Avatar: The Way Of Water</option>
+                <option>John Wick 4</option>
+            </select>
+
+            <label>Ticket Quantity</label>
+            <select class="input-field" required>
+                <option selected disabled>How many tickets?</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+
+            <label>Choose Schedule</label>
+            <select class="input-field" required>
+                <option selected disabled>Choose your schedule</option>
+                <option>09.00</option>
+                <option>11.00</option>
+                <option>13.00</option>
+                <option>15.00</option>
+                <option>17.00</option>
+                <option>19.00</option>
+                <option>21.00</option>
+                <option>23.00</option>
+            </select>
+
+            <label>Choose Payment</label>
+            <select class="input-field" required>
+                <option selected disabled>Choose your payment</option>
+                <option>QRIS</option>
+                <option>BCA</option>
+                <option>MANDIRI</option>
+                <option>BRI</option>
+                <option>BNI</option>
+                <option>GOPAY</option>
+                <option>SHOPEEPAY</option>
+                <option>DANA</option>
+            </select>
+
+            <button type="submit" class="btn-submit">Purchase Now!</button>
+        </form>
+
+        <a href="index.html" class="btn-back">← Back to Home</a>
+    </div>
+
+    <div id="popupMessage" class="popup">
+        <div class="popup-content">
+            <h2>🎟️ Purchase Successful!</h2>
+            <p>Thank you for buying your ticket at VISINEMA ID.<br>Your order has been received successfully.</p>
+            <button class="popup-btn" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <footer class="footer-bottom">
+        <p>©2025 VISINEMA ID - PT VISINEMA ENTERTAINMENTS INDONESIA. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("ticketForm");
+        const popup = document.getElementById("popupMessage");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            popup.classList.add("show");
+        });
+
+        function closePopup() {
+            popup.classList.remove("show");
+            form.reset();
+        }
+    </script>
+</body>
+
+</html>
